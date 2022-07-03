@@ -1,196 +1,741 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>有亿点烦躁 - 祝您万安</title><meta name="keywords" content="学习"><meta name="author" content="zyy"><meta name="copyright" content="zyy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="有亿点烦躁">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="有亿点烦躁">
-<meta property="og:description" content="个人博客">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="zyy">
-<meta property="article:tag" content="学习">
-<meta name="twitter:card" content="summary"><link rel="shortcut icon" href="/img/fav.jpeg"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '有亿点烦躁',
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2022-07-03 12:11:59'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
+<!DOCTYPE html>
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
 
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+<html lang="zh-CN">
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+
+    <head>
+      <meta charset="utf-8" />
+       
+      <meta name="keywords" content="学习" />
+       
+      <meta name="description" content="个人博客" />
+      
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> 有亿点烦躁</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
         }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+      
+      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
+        target="_blank"><img width="149" height="149" src="/images/forkme.png"
+          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/img/loading.gif" data-original="/images/cover1.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">有亿点烦躁</a></h1>
+      <div id="subtitle-box">
         
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['Tomorrow is another day', '', ''],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
     }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" data-original="/" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/background.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">有亿点烦躁</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">有亿点烦躁</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://blog.csdn.net/qq_50873027?spm=1000.2115.3001.5343" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/07/02/my-new/" title="my new"><img class="post_bg" src="/img/loading.gif" data-original="/img/default_top_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="my new"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/07/02/my-new/" title="my new">my new</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-02T10:22:42.000Z" title="发表于 2022-07-02 18:22:42">2022-07-02</time></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2021/09/03/%E5%BC%80%E7%AF%87/" title="开篇"><img class="post_bg" src="/img/loading.gif" data-original="/img/default_top_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开篇"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/09/03/%E5%BC%80%E7%AF%87/" title="开篇">开篇</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-03T12:01:27.000Z" title="发表于 2021-09-03 20:01:27">2021-09-03</time></span></div><div class="content">
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  <ul class="ads">
+    
+        <li>
+            <a target="_blank" rel="noopener" href="https://curl.qcloud.com/kvO7hb43">
+                <img src="/img/loading.gif" data-original="https://pic.imgdb.cn/item/62174b452ab3f51d912a5ccc.jpg" width="300" alt="云服务器限时秒杀">
+            </a>
+        </li>
+    
+        <li>
+            <a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=8630075">
+                <img src="/img/loading.gif" data-original="https://pic.imgdb.cn/item/62174b452ab3f51d912a5cd7.png" width="300" alt="vultr优惠vps">
+            </a>
+        </li>
+    
+</ul>
+  
+  
+  
 
-​        现在没有想写的文章（确切来说是可写的文章），但是又不想看那个全英文的自带文章，所以，有了这一篇。
-​        其实我开始是没打算弄的，用着简单粗暴的csdn也不是不可以接受诶。 但是某个朋友弄了给我看，我发现还可以，好像蛮好玩的，所以就也加入了。 
-​       暑假浪费了很多时间，画也没画，学也没写，那就？弄个博客？？？ 
-​       悲乎？！
-​       那我就？给您讲个乏味的经典笑话？
-一个测试工程师走进一家酒吧，要了一杯啤酒；一个测试工程师走进一家酒吧，要了一杯咖啡；一个测试工程师走进一家酒吧，要了0.7杯啤酒；一个测试工程师走进一家酒吧，要了-1杯啤酒；一个测试工程师走进一家酒吧，要了232杯啤酒；一个测试工程师走进一家酒吧，要了一杯洗脚水；一个测试工程师走进一家酒吧，要了一杯蜥蜴；一个测试工程师走进一家酒吧，要了一份asdfQwer@24dg!&amp;*(@；一个测试工程师走进一家酒吧，什么也没要；一个测试工程师走进一家酒吧，又走出去又从窗户进来又从后门出去从下水道钻进来；一个测试工程师走进一家酒吧，又走出去又进来又出去又进来又出去， ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2021/09/03/%E8%AF%AD%E5%BD%95/" title="语录"><img class="post_bg" src="/img/loading.gif" data-original="/img/default_top_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="语录"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/09/03/%E8%AF%AD%E5%BD%95/" title="语录">语录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-03T12:00:06.000Z" title="发表于 2021-09-03 20:00:06">2021-09-03</time></span></div><div class="content">
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
 
-人活在世上永远如临深渊,其实这世上从来就没有回头二字,最多也只是重新开始。
-“活着”的概念不是等着慢慢死去，而是要不断地奔跑，跑到很远的地方去看尽可能广大的世界，跑到筋疲力尽才不会后悔。
-这个世界有多大，取决于你认识的人，你每认识一个人，世界对你来说就会变大一些
-当谎言重复一千遍的时候，你就会相信它，只要那个谎言足够美好。
-命运这种东西，生来就是要被踏于足下的
-不要做会让自己后悔的事，不要让那些爱你的人难过，因为这个世界上，你爱的人固然很少，爱你的人也绝不多。
-愿你我江湖永别后会无期，道别的话多说无益，祝你无边落木萧萧下、西出阳关无故人、雨淋白骨血染草、月冷黄沙鬼守尸。
-人长大了，总要和这个世界和解。
-这世上要是没有了惹祸精，负责善后的人也会很孤独。
-废柴也是木头!只要能烧!
-穿越最深的地狱，而后直达天堂！
-每个人都有几个损友，约你见面老是在那种卫生条件很可疑的地方，喝着廉价的啤酒， 吃着烂糟糟的海鲜。可你还是犯贱地穿着你的阿玛尼定制西装去了，跟他对喷唾沫，而且乐此不疲。
-你在长大的同时， 某个人也在离开你。
-建立一份仇恨只需一瞬间，建立一份爱却要很多年。
-没人会记得死了的东西，没 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">zyy</div><div class="author-info__description">个人博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me#按钮文字</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://blog.csdn.net/qq_50873027?spm=1000.2115.3001.5343" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/07/02/my-new/" title="my new"><img src="/img/loading.gif" data-original="/img/default_top_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="my new"/></a><div class="content"><a class="title" href="/2022/07/02/my-new/" title="my new">my new</a><time datetime="2022-07-02T10:22:42.000Z" title="发表于 2022-07-02 18:22:42">2022-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/03/%E5%BC%80%E7%AF%87/" title="开篇"><img src="/img/loading.gif" data-original="/img/default_top_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开篇"/></a><div class="content"><a class="title" href="/2021/09/03/%E5%BC%80%E7%AF%87/" title="开篇">开篇</a><time datetime="2021-09-03T12:01:27.000Z" title="发表于 2021-09-03 20:01:27">2021-09-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/03/%E8%AF%AD%E5%BD%95/" title="语录"><img src="/img/loading.gif" data-original="/img/default_top_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="语录"/></a><div class="content"><a class="title" href="/2021/09/03/%E8%AF%AD%E5%BD%95/" title="语录">语录</a><time datetime="2021-09-03T12:00:06.000Z" title="发表于 2021-09-03 20:00:06">2021-09-03</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">九月 2021</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">3</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-07-03T04:11:59.606Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By zyy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function subtitleType () {
-  if (true) { 
-    window.typed = new Typed("#subtitle", {
-      strings: ["tomorow is anther day"],
-      startDelay: 300,
-      typeSpeed: 150,
-      loop: true,
-      backSpeed: 50
-    })
-  } else {
-    document.getElementById("subtitle").innerHTML = 'tomorow is anther day'
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-my-new"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/07/02/my-new/"
+    >my new</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/07/02/my-new/" class="article-date">
+  <time datetime="2022-07-02T10:22:42.000Z" itemprop="datePublished">2022-07-02</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+   
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-开篇"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/09/03/%E5%BC%80%E7%AF%87/"
+    >开篇</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/09/03/%E5%BC%80%E7%AF%87/" class="article-date">
+  <time datetime="2021-09-03T12:01:27.000Z" itemprop="datePublished">2021-09-03</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <span id="more"></span>
+
+<p>​        现在没有想写的文章（确切来说是可写的文章），但是又不想看那个全英文的自带文章，所以，有了这一篇。</p>
+<p>​        其实我开始是没打算弄的，用着简单粗暴的csdn也不是不可以接受诶。 但是某个朋友弄了给我看，我发现还可以，好像蛮好玩的，所以就也加入了。 </p>
+<p>​       暑假浪费了很多时间，画也没画，学也没写，那就？弄个博客？？？ </p>
+<p>​       悲乎？！</p>
+<p>​       那我就？给您讲个乏味的经典笑话？</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">一个测试工程师走进一家酒吧，要了一杯啤酒；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了一杯咖啡；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了0.7杯啤酒；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了-1杯啤酒；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了232杯啤酒；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了一杯洗脚水；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了一杯蜥蜴；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了一份asdfQwer@24dg!&amp;*(@；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，什么也没要；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，又走出去又从窗户进来又从后门出去从下水道钻进来；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，又走出去又进来又出去又进来又出去，最后在外面把老板打了一顿；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了一杯烫烫烫的锟斤拷；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了NaN杯Null；</span><br><span class="line"></span><br><span class="line">一个测试工程师冲进一家酒吧，要了500T啤酒咖啡洗脚水野猫狼牙棒奶茶；</span><br><span class="line"></span><br><span class="line">一个测试工程师把酒吧拆了；</span><br><span class="line"></span><br><span class="line">一个测试工程师化装成老板走进一家酒吧，要了500杯啤酒并且不付钱；</span><br><span class="line"></span><br><span class="line">一万个测试工程师在酒吧门外呼啸而过；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了一杯啤酒&#x27;;DROP TABLE 酒吧；</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">测试工程师们满意地离开了酒吧。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">然后一名顾客点了一份炒饭，酒吧炸了。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>（所以测试工程师，yyds，my dream）</p>
+<p>再献上我喜欢的一篇散文（残存的最后一点人文情怀） </p>
+<h5 id="《我喜欢出发》"><a href="#《我喜欢出发》" class="headerlink" title="《我喜欢出发》"></a>《我喜欢出发》</h5><blockquote>
+<p>​       我喜欢出发。</p>
+<p>​        凡是到达了的地方，都属于昨天。哪怕那山再青，那水再秀，那风再温柔。太深的流连便成了一种羁绊，绊住的不仅有双脚，还有未来。 </p>
+<p>​        怎么能不喜欢出发呢？没见过大山的巍峨，真是遗憾；见了大山的巍峨，没见过大海的浩瀚，仍然遗憾；见了大海的浩瀚，没见过大漠的广袤，依旧遗憾；见了大漠的广袤，没见过森林的神秘，还是遗憾。世界上有不绝的风景，我有不老的心情。 </p>
+<p>​       我自然知道，大山有坎坷，大海有浪涛，大漠有风沙，森林有猛兽。即便这样，我依然喜欢。</p>
+<p>​       打破生活的平静便是另一番景致，一种属于年轻的景致。真庆幸，我还没有老。即便真老了又怎么样，不是有句话叫老当益壮吗?</p>
+<p>​       于是，我还想从大山那里学习深刻，我还想从大海那里学习勇敢，我还想从大漠那里学习沉着，我还想从森林那里学习机敏。我想学着品味一种缤纷的人生。</p>
+<p>​        人能走多远？这话不是要问两脚而是要问志向；人能攀多高？这事不是要问双手而是要问意志。于是，我想用青春的热血给自己树起一个高远的目标。不仅是为了争取一种光荣，更是为了追求一种境界。目标实现了，便是光荣；目标实现不了，人生也会因这一路风雨跋涉变得丰富而充实；在我看来，这就是不虚此生。</p>
+<p>​        是的，我喜欢出发，愿你也喜欢。</p>
+</blockquote>
+<p>最后结个尾</p>
+<p>People come and go, we struggled with laughter and tears, and all the years have gone by,still I have you by my side.</p>
+<p> 你陪了我多少年</p>
+<p>穿林打叶 过程轰轰烈烈</p>
+<p>花开花落 一路上起起跌跌</p>
+<p>（希望江南老贼给我的明非一个happy ending，才不枉我从初中等到大学）</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-语录"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/09/03/%E8%AF%AD%E5%BD%95/"
+    >语录</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/09/03/%E8%AF%AD%E5%BD%95/" class="article-date">
+  <time datetime="2021-09-03T12:00:06.000Z" itemprop="datePublished">2021-09-03</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <span id="more"></span>
+
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/207365">人活在世上永远如临深渊,其实这世上从来就没有回头二字,最多也只是重新开始。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/247968">“活着”的概念不是等着慢慢死去，而是要不断地奔跑，跑到很远的地方去看尽可能广大的世界，跑到筋疲力尽才不会后悔。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/259850">这个世界有多大，取决于你认识的人，你每认识一个人，世界对你来说就会变大一些</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/374571">当谎言重复一千遍的时候，你就会相信它，只要那个谎言足够美好。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/200274">命运这种东西，生来就是要被踏于足下的</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/372548">不要做会让自己后悔的事，不要让那些爱你的人难过，因为这个世界上，你爱的人固然很少，爱你的人也绝不多。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/198804">愿你我江湖永别后会无期，道别的话多说无益，祝你无边落木萧萧下、西出阳关无故人、雨淋白骨血染草、月冷黄沙鬼守尸。</a></p>
+<p>人长大了，总要和这个世界和解。</p>
+<p>这世上要是没有了惹祸精，负责善后的人也会很孤独。</p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/938750">废柴也是木头!只要能烧!</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/198844">穿越最深的地狱，而后直达天堂！</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/489303">每个人都有几个损友，约你见面老是在那种卫生条件很可疑的地方，喝着廉价的啤酒， 吃着烂糟糟的海鲜。可你还是犯贱地穿着你的阿玛尼定制西装去了，跟他对喷唾沫，而且乐此不疲。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/312570">你在长大的同时， 某个人也在离开你。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/377896">建立一份仇恨只需一瞬间，建立一份爱却要很多年。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/720518">没人会记得死了的东西，没人记得的东西就跟死了一样。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/587765">人的记忆很靠不住，就像一块容易被消磁的破硬盘。过去的事情就像是画在沙地上的画，时间流逝，记忆模糊，最后化成白茫茫一片，再也无法分辨。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/691694">像烟花也是过一生，像樱花也是过一生，只要亮过和盛开过不就好了吗？</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/1100633">从相遇的刹那开始，离别也已经开始。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/718143">你陪了我多少年，一路上花开花落，起起跌跌。<br> All the years have gone by ,only you still by my side.</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/938050">你陪了我多少年，花开花谢，一路上起起跌跌。春夏秋冬泯和灭，幕还未谢。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/1237494">有些人认识了很久，也未必很熟，有些人看到对方的第一眼，就会觉得很亲近。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/377891">想把每个人留在最初相遇的样子，可是会变的，大家都走了，只留下他一个人在原地。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/495486">人需要多大的勇气才能从天堂般的幸福感中挣脱出来。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/281828">古人说什么来着，“天地一逆旅”，每个人的一辈子都在跟死神比赛跑，它想抓住你，你想跑得更远看更美的世界。虽然你明知道还是会被它抓住，可只要还有一口气你就会玩命地跑。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/1585688">这世界总是这么可笑对不对？总是一个人很想说话，另一个人不想听。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/428584">虽然不知道世界有多大，可还是固执地想到外面去。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/495494">常常都是这样，最爱你的人，他为你做了很多事，可你不知道。因为他觉得做这些都 是应该的，就忘记跟你说了。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/537764">每一次离别都是为了更好的归来</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/889603">Something for nothing。 （拿什么珍贵的东西换回了空白）lonely kids hides in heart(每一个人心里都藏有一个孤独的孩子)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/198812">布加迪威龙是世界上最快量产跑车，可它跑不过时光，也跑不过早已注定的命运。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/593069">我们都是小怪兽，终有一天会被正义的奥特曼杀死。</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mingyantong.com/ju/589643">“我告诉你啊，这世界可好玩了，还有很多你没有见过也没有经历过的事情。”</a></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+  </article>
+  
+
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> zyy
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/img/loading.gif" data-original="/images/ayer-side.svg" alt="有亿点烦躁"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/img/loading.gif" data-original="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/img/loading.gif" data-original="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
   }
-}
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
 
-if (true) {
-  if (typeof Typed === 'function') {
-    subtitleType()
-  } else {
-    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
   }
-} else {
-  subtitleType()
-}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
-POWERMODE.shake = true;
-POWERMODE.mobile = true;
-document.body.addEventListener('input', POWERMODE);
-</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script>
+</script>
+
+
+    
+    
+
+  </div>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body></html>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+
+</html>
