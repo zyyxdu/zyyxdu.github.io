@@ -1,46 +1,394 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>计组1</title>
-      <link href="/2022/07/11/%E8%AE%A1%E7%BB%841/"/>
-      <url>/2022/07/11/%E8%AE%A1%E7%BB%841/</url>
-      
-        <content type="html"><![CDATA[<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113102950363.png" alt="image-20220113102950363"></p><h1 id="1-绪论"><a href="#1-绪论" class="headerlink" title="1.绪论"></a><strong>1.绪论</strong></h1><p>摩尔定律</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220112213809068.png" alt="image-20220112213809068"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220112213912423.png" alt="image-20220112213912423"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113101336106.png" alt="image-20220113101336106"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113101404815.png" alt="image-20220113101404815"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113102848882.png" alt="image-20220113102848882"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113103039946.png" alt="image-20220113103039946"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113103136291.png" alt="image-20220113103136291"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113103151514.png" alt="image-20220113103151514"></p><p>IPS指令每秒的实现量</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113103214903.png" alt="image-20220113103214903"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104057582.png" alt="image-20220113104057582"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104123158.png" alt="image-20220113104123158"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104135830.png" alt="image-20220113104135830"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104439341.png" alt="image-20220113104439341"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104534484.png" alt="image-20220113104534484"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104537804.png" alt="image-20220113104537804"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104549692.png" alt="image-20220113104549692"></p><p>IPS是每秒执行多少条指令</p><p>CPI是平均一个指令需要的时钟周期<img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113232155117.png" alt="image-20220113232155117"></p><h1 id="2-计算机中的数据表示"><a href="#2-计算机中的数据表示" class="headerlink" title="2.计算机中的数据表示"></a><strong>2.计算机中的数据表示</strong></h1><h2 id="原码-反码-补码的基础概念和计算方法"><a href="#原码-反码-补码的基础概念和计算方法" class="headerlink" title="原码, 反码, 补码的基础概念和计算方法."></a>原码, 反码, 补码的基础概念和计算方法.</h2><p>在探求为何机器要使用补码之前, 让我们先了解原码, 反码和补码的概念.对于一个数, 计算机要使用一定的编码方式进行存储. 原码, 反码, 补码是机器存储一个具体数字的编码方式.</p><h3 id="1-原码"><a href="#1-原码" class="headerlink" title="1. 原码"></a>1. 原码</h3><p>原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值. 比如如果是8位二进制:</p><blockquote><p>[+1]原 = 0000 0001</p><p>[-1]原 = 1000 0001</p></blockquote><p>第一位是符号位. 因为第一位是符号位, 所以8位二进制数的取值范围就是:</p><blockquote><p>[1111 1111 , 0111 1111]</p></blockquote><p>即</p><blockquote><p>[-127 , 127]</p></blockquote><p>原码是人脑最容易理解和计算的表示方式.</p><h3 id="2-反码"><a href="#2-反码" class="headerlink" title="2. 反码"></a>2. 反码</h3><p>反码的表示方法是:</p><p>正数的反码是其本身</p><p>负数的反码是在其原码的基础上, 符号位不变，其余各个位取反.</p><blockquote><p>[+1] = [00000001]原 = [00000001]反</p><p>[-1] = [10000001]原 = [11111110]反</p></blockquote><p>可见如果一个反码表示的是负数, 人脑无法直观的看出来它的数值. 通常要将其转换成原码再计算.</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616171359711.png" alt="image-20220616171359711"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616171419016.png" alt="image-20220616171419016"></p><h3 id="3-补码"><a href="#3-补码" class="headerlink" title="3. 补码"></a>3. 补码</h3><p>补码的表示方法是:</p><p>正数的补码就是其本身</p><p>负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1. (即在反码的基础上+1)</p><blockquote><p>[+1] = [00000001]原 = [00000001]反 = [00000001]补</p><p>[-1] = [10000001]原 = [11111110]反 = [11111111]补</p></blockquote><p>对于负数, 补码表示方式也是人脑无法直观看出其数值的. 通常也需要转换成原码在计算其数值.</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616171438350.png" alt="image-20220616171438350"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616171542760.png" alt="image-20220616171542760"></p><h3 id="4-移码"><a href="#4-移码" class="headerlink" title="4.移码"></a>4.移码</h3><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616165932830.png" alt="image-20220616165932830"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616165655025.png" alt="image-20220616165655025"></p><p>求补运算</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616165749379.png" alt="image-20220616165749379"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616165820459.png" alt="image-20220616165820459"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616170125663.png" alt="image-20220616170125663"></p><p>浮点数的表示</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616175216787.png" alt="image-20220616175216787"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220624040949091.png" alt="image-20220624040949091"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220624041331903.png" alt="image-20220624041331903"></p><p><strong>IEEE754</strong></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616175056978.png" alt="image-20220616175056978"></p><p>阶码=移码-偏移量</p><p>移码=阶码真值-偏移量（7个1，127）</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616180201869.png" alt="image-20220616180201869"></p><p>奇偶校验</p><p>海明码</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616181905518.png" alt="image-20220616181905518"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616181934446.png" alt="image-20220616181934446"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616182152360.png" alt="image-20220616182152360"></p><p>CRC码</p><h1 id="3-运算方法与运算器"><a href="#3-运算方法与运算器" class="headerlink" title="3.运算方法与运算器"></a><strong>3.运算方法与运算器</strong></h1><p>加减法</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001120999.png" alt="image-20220617001120999"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001158809.png" alt="image-20220617001158809"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001225234.png" alt="image-20220617001225234"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001324035.png" alt="image-20220617001324035"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001343316.png" alt="image-20220617001343316"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001400715.png" alt="image-20220617001400715"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001412108.png" alt="image-20220617001412108"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001458779.png" alt="image-20220617001458779"></p><p>加法器。。。。没看</p><p>移码的加减</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617002620273.png" alt="image-20220617002620273"></p><p>BCD码</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617003743505.png" alt="image-20220617003743505"></p><p>乘法</p><p>原码一位乘</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617143647092.png" alt="image-20220617143647092"></p><p>补码一位乘法    布斯booth 法</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617143820120.png" alt="image-20220617143820120"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617143805550.png" alt="image-20220617143805550"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617143847242.png" alt="image-20220617143847242"></p><p>除法</p><p>原码除法  恢复余数法</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617144654692.png" alt="image-20220617144654692"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617144753736.png" alt="image-20220617144753736"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617163748156.png" alt="image-20220617163748156"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617192943121.png" alt="image-20220617192943121"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617193819181.png" alt="image-20220617193819181"></p><p>原码加减交替法</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617193211754.png" alt="image-20220617193211754"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617193848854.png" alt="image-20220617193848854"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617194642849.png" alt="image-20220617194642849"></p><p>浮点数运算‘</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617234859772.png" alt="image-20220617234859772"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617234916779.png" alt="image-20220617234916779"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617235926843.png" alt="image-20220617235926843"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617235938594.png" alt="image-20220617235938594"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617235912957.png" alt="image-20220617235912957"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617235957170.png" alt="image-20220617235957170"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220618000006995.png" alt="image-20220618000006995"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220618000017825.png" alt="image-20220618000017825"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220618000711660.png" alt="image-20220618000711660"></p><h1 id="4-指令"><a href="#4-指令" class="headerlink" title="4.指令"></a><strong>4.指令</strong></h1><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015120097.png" alt="image-20220623015120097"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015131592.png" alt="image-20220623015131592"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015148380.png" alt="image-20220623015148380"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015204189.png" alt="image-20220623015204189"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015218121.png" alt="image-20220623015218121"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015315273.png" alt="image-20220623015315273"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015338999.png" alt="image-20220623015338999"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015404619.png" alt="image-20220623015404619"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015528389.png" alt="image-20220623015528389"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015549927.png" alt="image-20220623015549927"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015613653.png" alt="image-20220623015613653"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015626839.png" alt="image-20220623015626839"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015700732.png" alt="image-20220623015700732"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015738810.png" alt="image-20220623015738810"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015757005.png" alt="image-20220623015757005"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015806917.png" alt="image-20220623015806917"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015822261.png" alt="image-20220623015822261"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015835075.png" alt="image-20220623015835075"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015857472.png" alt="image-20220623015857472"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015907167.png" alt="image-20220623015907167"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623012843083.png" alt="image-20220623012843083"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623012831378.png" alt="image-20220623012831378"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623013409411.png" alt="image-20220623013409411"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623013630710.png" alt="image-20220623013630710"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623013647975.png" alt="image-20220623013647975"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623013837128.png" alt="image-20220623013837128"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623013853041.png" alt="image-20220623013853041"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623013914331.png" alt="image-20220623013914331"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014451199.png" alt="image-20220623014451199"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014758305.png" alt="image-20220623014758305"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014612092.png" alt="image-20220623014612092"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014811271.png" alt="image-20220623014811271"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014857846.png" alt="image-20220623014857846"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015035306.png" alt="image-20220623015035306"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623020117309.png" alt="image-20220623020117309"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623020218658.png" alt="image-20220623020218658"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623020243135.png" alt="image-20220623020243135"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014025247.png" alt="image-20220623014025247"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014043758.png" alt="image-20220623014043758"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014103888.png" alt="image-20220623014103888"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014116985.png" alt="image-20220623014116985"></p><h1 id="5-存储系统"><a href="#5-存储系统" class="headerlink" title="5.存储系统"></a><strong>5.存储系统</strong></h1><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622224753858.png" alt="image-20220622224753858"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622224828761.png" alt="image-20220622224828761"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622224850616.png" alt="image-20220622224850616"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622224918911.png" alt="image-20220622224918911"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622224931272.png" alt="image-20220622224931272"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622225034555.png" alt="image-20220622225034555"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622230744597.png" alt="image-20220622230744597"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622230755834.png" alt="image-20220622230755834"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622230839873.png" alt="image-20220622230839873"></p><h1 id="6-处理器（CPU）设计"><a href="#6-处理器（CPU）设计" class="headerlink" title="6.处理器（CPU）设计"></a><strong>6.处理器（CPU）设计</strong></h1><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021718516.png" alt="image-20220623021718516"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021739261.png" alt="image-20220623021739261"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021659425.png" alt="image-20220623021659425"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021756839.png" alt="image-20220623021756839"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021804896.png" alt="image-20220623021804896"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021931543.png" alt="image-20220623021931543"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021952984.png" alt="image-20220623021952984"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022010487.png" alt="image-20220623022010487"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022101800.png" alt="image-20220623022101800"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022114440.png" alt="image-20220623022114440"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022211696.png" alt="image-20220623022211696"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022224624.png" alt="image-20220623022224624"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022237599.png" alt="image-20220623022237599"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022249230.png" alt="image-20220623022249230"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022553973.png" alt="image-20220623022553973"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022639287.png" alt="image-20220623022639287"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022906607.png" alt="image-20220623022906607"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022950768.png" alt="image-20220623022950768"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022959921.png" alt="image-20220623022959921"></p><p>w信号——节拍信号   P 信号——触发信号</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023321461.png" alt="image-20220623023321461"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023348891.png" alt="image-20220623023348891"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023444832.png" alt="image-20220623023444832"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023458426.png" alt="image-20220623023458426"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023526721.png" alt="image-20220623023526721"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023539375.png" alt="image-20220623023539375"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023650313.png" alt="image-20220623023650313"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023707495.png" alt="image-20220623023707495"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023848617.png" alt="image-20220623023848617"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023910926.png" alt="image-20220623023910926"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024030598.png" alt="image-20220623024030598"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024200984.png" alt="image-20220623024200984"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024214624.png" alt="image-20220623024214624"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024245839.png" alt="image-20220623024245839"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024316000.png" alt="image-20220623024316000"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024348353.png" alt="image-20220623024348353"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024600606.png" alt="image-20220623024600606"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024618800.png" alt="image-20220623024618800"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024654775.png" alt="image-20220623024654775"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024815114.png" alt="image-20220623024815114"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024828665.png" alt="image-20220623024828665"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024839144.png" alt="image-20220623024839144"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024900666.png" alt="image-20220623024900666"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025300823.png" alt="image-20220623025300823"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025531376.png" alt="image-20220623025531376"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025549376.png" alt="image-20220623025549376"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025620214.png" alt="image-20220623025620214"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025644502.png" alt="image-20220623025644502"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025800342.png" alt="image-20220623025800342"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025830616.png" alt="image-20220623025830616"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025855135.png" alt="image-20220623025855135"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025937214.png" alt="image-20220623025937214"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025957254.png" alt="image-20220623025957254"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030051984.png" alt="image-20220623030051984"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030105360.png" alt="image-20220623030105360"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030132208.png" alt="image-20220623030132208"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030152181.png" alt="image-20220623030152181"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030217189.png" alt="image-20220623030217189"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030233023.png" alt="image-20220623030233023"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030301856.png" alt="image-20220623030301856"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030321855.png" alt="image-20220623030321855"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030340903.png" alt="image-20220623030340903"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030407856.png" alt="image-20220623030407856"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030426959.png" alt="image-20220623030426959"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030453144.png" alt="image-20220623030453144"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030509863.png" alt="image-20220623030509863"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030528626.png" alt="image-20220623030528626"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030705107.png" alt="image-20220623030705107"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030811716.png" alt="image-20220623030811716"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030837558.png" alt="image-20220623030837558"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030932055.png" alt="image-20220623030932055"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030946320.png" alt="image-20220623030946320"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623031021294.png" alt="image-20220623031021294"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623031033329.png" alt="image-20220623031033329"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151220419.png" alt="image-20220623151220419"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151353373.png" alt="image-20220623151353373"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151417074.png" alt="image-20220623151417074"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151436988.png" alt="image-20220623151436988"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151525604.png" alt="image-20220623151525604"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151539742.png" alt="image-20220623151539742"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151712754.png" alt="image-20220623151712754"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151857997.png" alt="image-20220623151857997"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151920293.png" alt="image-20220623151920293"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152050971.png" alt="image-20220623152050971"></p><p>块数×（区号位数＋块号位数）</p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152318403.png" alt="image-20220623152318403"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152336658.png" alt="image-20220623152336658"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152354594.png" alt="image-20220623152354594"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152504132.png" alt="image-20220623152504132"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152550614.png" alt="image-20220623152550614"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152938928.png" alt="image-20220623152938928"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153004106.png" alt="image-20220623153004106"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153016108.png" alt="image-20220623153016108"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153134886.png" alt="image-20220623153134886"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153203010.png" alt="image-20220623153203010"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153236891.png" alt="image-20220623153236891"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153307980.png" alt="image-20220623153307980"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153351084.png" alt="image-20220623153351084"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153433843.png" alt="image-20220623153433843"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153613253.png" alt="image-20220623153613253"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153634787.png" alt="image-20220623153634787"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153833083.png" alt="image-20220623153833083"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153854819.png" alt="image-20220623153854819"></p><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623154155803.png" alt="image-20220623154155803"></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>开篇</title>
-      <link href="/2021/09/03/%E5%BC%80%E7%AF%87/"/>
-      <url>/2021/09/03/%E5%BC%80%E7%AF%87/</url>
-      
-        <content type="html"><![CDATA[<span id="more"></span><p>​        现在没有想写的文章（确切来说是可写的文章），但是又不想看那个全英文的自带文章，所以，有了这一篇。</p><p>​        其实我开始是没打算弄的，用着简单粗暴的csdn也不是不可以接受诶。 但是某个朋友弄了给我看，我发现还可以，好像蛮好玩的，所以就也加入了。 </p><p>​       暑假浪费了很多时间，画也没画，学也没写，那就？弄个博客？？？ </p><p>​       悲乎？！</p><p>​       那我就？给您讲个乏味的经典笑话？</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">一个测试工程师走进一家酒吧，要了一杯啤酒；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了一杯咖啡；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了0.7杯啤酒；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了-1杯啤酒；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了232杯啤酒；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了一杯洗脚水；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了一杯蜥蜴；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了一份asdfQwer@24dg!&amp;*(@；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，什么也没要；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，又走出去又从窗户进来又从后门出去从下水道钻进来；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，又走出去又进来又出去又进来又出去，最后在外面把老板打了一顿；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了一杯烫烫烫的锟斤拷；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了NaN杯Null；</span><br><span class="line"></span><br><span class="line">一个测试工程师冲进一家酒吧，要了500T啤酒咖啡洗脚水野猫狼牙棒奶茶；</span><br><span class="line"></span><br><span class="line">一个测试工程师把酒吧拆了；</span><br><span class="line"></span><br><span class="line">一个测试工程师化装成老板走进一家酒吧，要了500杯啤酒并且不付钱；</span><br><span class="line"></span><br><span class="line">一万个测试工程师在酒吧门外呼啸而过；</span><br><span class="line"></span><br><span class="line">一个测试工程师走进一家酒吧，要了一杯啤酒&#x27;;DROP TABLE 酒吧；</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">测试工程师们满意地离开了酒吧。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">然后一名顾客点了一份炒饭，酒吧炸了。</span><br></pre></td></tr></table></figure><p>（所以测试工程师，yyds，my dream）</p><p>再献上我喜欢的一篇散文（残存的最后一点人文情怀） </p><h5 id="《我喜欢出发》"><a href="#《我喜欢出发》" class="headerlink" title="《我喜欢出发》"></a>《我喜欢出发》</h5><blockquote><p>​       我喜欢出发。</p><p>​        凡是到达了的地方，都属于昨天。哪怕那山再青，那水再秀，那风再温柔。太深的流连便成了一种羁绊，绊住的不仅有双脚，还有未来。 </p><p>​        怎么能不喜欢出发呢？没见过大山的巍峨，真是遗憾；见了大山的巍峨，没见过大海的浩瀚，仍然遗憾；见了大海的浩瀚，没见过大漠的广袤，依旧遗憾；见了大漠的广袤，没见过森林的神秘，还是遗憾。世界上有不绝的风景，我有不老的心情。 </p><p>​       我自然知道，大山有坎坷，大海有浪涛，大漠有风沙，森林有猛兽。即便这样，我依然喜欢。</p><p>​       打破生活的平静便是另一番景致，一种属于年轻的景致。真庆幸，我还没有老。即便真老了又怎么样，不是有句话叫老当益壮吗?</p><p>​       于是，我还想从大山那里学习深刻，我还想从大海那里学习勇敢，我还想从大漠那里学习沉着，我还想从森林那里学习机敏。我想学着品味一种缤纷的人生。</p><p>​        人能走多远？这话不是要问两脚而是要问志向；人能攀多高？这事不是要问双手而是要问意志。于是，我想用青春的热血给自己树起一个高远的目标。不仅是为了争取一种光荣，更是为了追求一种境界。目标实现了，便是光荣；目标实现不了，人生也会因这一路风雨跋涉变得丰富而充实；在我看来，这就是不虚此生。</p><p>​        是的，我喜欢出发，愿你也喜欢。</p></blockquote><p>最后结个尾</p><p>People come and go, we struggled with laughter and tears, and all the years have gone by,still I have you by my side.</p><p> 你陪了我多少年</p><p>穿林打叶 过程轰轰烈烈</p><p>花开花落 一路上起起跌跌</p><p>（希望江南老贼给我的明非一个happy ending，才不枉我从初中等到大学）</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>语录</title>
-      <link href="/2021/09/03/%E8%AF%AD%E5%BD%95/"/>
-      <url>/2021/09/03/%E8%AF%AD%E5%BD%95/</url>
-      
-        <content type="html"><![CDATA[<span id="more"></span><p><a href="https://www.mingyantong.com/ju/207365">人活在世上永远如临深渊,其实这世上从来就没有回头二字,最多也只是重新开始。</a></p><p><a href="https://www.mingyantong.com/ju/247968">“活着”的概念不是等着慢慢死去，而是要不断地奔跑，跑到很远的地方去看尽可能广大的世界，跑到筋疲力尽才不会后悔。</a></p><p><a href="https://www.mingyantong.com/ju/259850">这个世界有多大，取决于你认识的人，你每认识一个人，世界对你来说就会变大一些</a></p><p><a href="https://www.mingyantong.com/ju/374571">当谎言重复一千遍的时候，你就会相信它，只要那个谎言足够美好。</a></p><p><a href="https://www.mingyantong.com/ju/200274">命运这种东西，生来就是要被踏于足下的</a></p><p><a href="https://www.mingyantong.com/ju/372548">不要做会让自己后悔的事，不要让那些爱你的人难过，因为这个世界上，你爱的人固然很少，爱你的人也绝不多。</a></p><p><a href="https://www.mingyantong.com/ju/198804">愿你我江湖永别后会无期，道别的话多说无益，祝你无边落木萧萧下、西出阳关无故人、雨淋白骨血染草、月冷黄沙鬼守尸。</a></p><p>人长大了，总要和这个世界和解。</p><p>这世上要是没有了惹祸精，负责善后的人也会很孤独。</p><p><a href="https://www.mingyantong.com/ju/938750">废柴也是木头!只要能烧!</a></p><p><a href="https://www.mingyantong.com/ju/198844">穿越最深的地狱，而后直达天堂！</a></p><p><a href="https://www.mingyantong.com/ju/489303">每个人都有几个损友，约你见面老是在那种卫生条件很可疑的地方，喝着廉价的啤酒， 吃着烂糟糟的海鲜。可你还是犯贱地穿着你的阿玛尼定制西装去了，跟他对喷唾沫，而且乐此不疲。</a></p><p><a href="https://www.mingyantong.com/ju/312570">你在长大的同时， 某个人也在离开你。</a></p><p><a href="https://www.mingyantong.com/ju/377896">建立一份仇恨只需一瞬间，建立一份爱却要很多年。</a></p><p><a href="https://www.mingyantong.com/ju/720518">没人会记得死了的东西，没人记得的东西就跟死了一样。</a></p><p><a href="https://www.mingyantong.com/ju/587765">人的记忆很靠不住，就像一块容易被消磁的破硬盘。过去的事情就像是画在沙地上的画，时间流逝，记忆模糊，最后化成白茫茫一片，再也无法分辨。</a></p><p><a href="https://www.mingyantong.com/ju/691694">像烟花也是过一生，像樱花也是过一生，只要亮过和盛开过不就好了吗？</a></p><p><a href="https://www.mingyantong.com/ju/1100633">从相遇的刹那开始，离别也已经开始。</a></p><p><a href="https://www.mingyantong.com/ju/718143">你陪了我多少年，一路上花开花落，起起跌跌。<br> All the years have gone by ,only you still by my side.</a></p><p><a href="https://www.mingyantong.com/ju/938050">你陪了我多少年，花开花谢，一路上起起跌跌。春夏秋冬泯和灭，幕还未谢。</a></p><p><a href="https://www.mingyantong.com/ju/1237494">有些人认识了很久，也未必很熟，有些人看到对方的第一眼，就会觉得很亲近。</a></p><p><a href="https://www.mingyantong.com/ju/377891">想把每个人留在最初相遇的样子，可是会变的，大家都走了，只留下他一个人在原地。</a></p><p><a href="https://www.mingyantong.com/ju/495486">人需要多大的勇气才能从天堂般的幸福感中挣脱出来。</a></p><p><a href="https://www.mingyantong.com/ju/281828">古人说什么来着，“天地一逆旅”，每个人的一辈子都在跟死神比赛跑，它想抓住你，你想跑得更远看更美的世界。虽然你明知道还是会被它抓住，可只要还有一口气你就会玩命地跑。</a></p><p><a href="https://www.mingyantong.com/ju/1585688">这世界总是这么可笑对不对？总是一个人很想说话，另一个人不想听。</a></p><p><a href="https://www.mingyantong.com/ju/428584">虽然不知道世界有多大，可还是固执地想到外面去。</a></p><p><a href="https://www.mingyantong.com/ju/495494">常常都是这样，最爱你的人，他为你做了很多事，可你不知道。因为他觉得做这些都 是应该的，就忘记跟你说了。</a></p><p><a href="https://www.mingyantong.com/ju/537764">每一次离别都是为了更好的归来</a></p><p><a href="https://www.mingyantong.com/ju/889603">Something for nothing。 （拿什么珍贵的东西换回了空白）lonely kids hides in heart(每一个人心里都藏有一个孤独的孩子)</a></p><p><a href="https://www.mingyantong.com/ju/198812">布加迪威龙是世界上最快量产跑车，可它跑不过时光，也跑不过早已注定的命运。</a></p><p><a href="https://www.mingyantong.com/ju/593069">我们都是小怪兽，终有一天会被正义的奥特曼杀死。</a></p><p><a href="https://www.mingyantong.com/ju/589643">“我告诉你啊，这世界可好玩了，还有很多你没有见过也没有经历过的事情。”</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title>开篇</title>
+    <url>/2021/09/03/%E5%BC%80%E7%AF%87/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<p>​        现在没有想写的文章（确切来说是可写的文章），但是又不想看那个全英文的自带文章，所以，有了这一篇。</p>
+<p>​        其实我开始是没打算弄的，用着简单粗暴的csdn也不是不可以接受诶。 但是某个朋友弄了给我看，我发现还可以，好像蛮好玩的，所以就也加入了。 </p>
+<p>​       暑假浪费了很多时间，画也没画，学也没写，那就？弄个博客？？？ </p>
+<p>​       悲乎？！</p>
+<p>​       那我就？给您讲个乏味的经典笑话？</p>
+<pre><code>一个测试工程师走进一家酒吧，要了一杯啤酒；
+
+一个测试工程师走进一家酒吧，要了一杯咖啡；
+
+一个测试工程师走进一家酒吧，要了0.7杯啤酒；
+
+一个测试工程师走进一家酒吧，要了-1杯啤酒；
+
+一个测试工程师走进一家酒吧，要了232杯啤酒；
+
+一个测试工程师走进一家酒吧，要了一杯洗脚水；
+
+一个测试工程师走进一家酒吧，要了一杯蜥蜴；
+
+一个测试工程师走进一家酒吧，要了一份asdfQwer@24dg!&amp;*(@；
+
+一个测试工程师走进一家酒吧，什么也没要；
+
+一个测试工程师走进一家酒吧，又走出去又从窗户进来又从后门出去从下水道钻进来；
+
+一个测试工程师走进一家酒吧，又走出去又进来又出去又进来又出去，最后在外面把老板打了一顿；
+
+一个测试工程师走进一家酒吧，要了一杯烫烫烫的锟斤拷；
+
+一个测试工程师走进一家酒吧，要了NaN杯Null；
+
+一个测试工程师冲进一家酒吧，要了500T啤酒咖啡洗脚水野猫狼牙棒奶茶；
+
+一个测试工程师把酒吧拆了；
+
+一个测试工程师化装成老板走进一家酒吧，要了500杯啤酒并且不付钱；
+
+一万个测试工程师在酒吧门外呼啸而过；
+
+一个测试工程师走进一家酒吧，要了一杯啤酒&#39;;DROP TABLE 酒吧；
+
+
+
+测试工程师们满意地离开了酒吧。
+
+
+
+然后一名顾客点了一份炒饭，酒吧炸了。
+</code></pre>
+<p>（所以测试工程师，yyds，my dream）</p>
+<p>再献上我喜欢的一篇散文（残存的最后一点人文情怀） </p>
+<h5 id="《我喜欢出发》"><a href="#《我喜欢出发》" class="headerlink" title="《我喜欢出发》"></a>《我喜欢出发》</h5><blockquote>
+<p>​       我喜欢出发。</p>
+<p>​        凡是到达了的地方，都属于昨天。哪怕那山再青，那水再秀，那风再温柔。太深的流连便成了一种羁绊，绊住的不仅有双脚，还有未来。 </p>
+<p>​        怎么能不喜欢出发呢？没见过大山的巍峨，真是遗憾；见了大山的巍峨，没见过大海的浩瀚，仍然遗憾；见了大海的浩瀚，没见过大漠的广袤，依旧遗憾；见了大漠的广袤，没见过森林的神秘，还是遗憾。世界上有不绝的风景，我有不老的心情。 </p>
+<p>​       我自然知道，大山有坎坷，大海有浪涛，大漠有风沙，森林有猛兽。即便这样，我依然喜欢。</p>
+<p>​       打破生活的平静便是另一番景致，一种属于年轻的景致。真庆幸，我还没有老。即便真老了又怎么样，不是有句话叫老当益壮吗?</p>
+<p>​       于是，我还想从大山那里学习深刻，我还想从大海那里学习勇敢，我还想从大漠那里学习沉着，我还想从森林那里学习机敏。我想学着品味一种缤纷的人生。</p>
+<p>​        人能走多远？这话不是要问两脚而是要问志向；人能攀多高？这事不是要问双手而是要问意志。于是，我想用青春的热血给自己树起一个高远的目标。不仅是为了争取一种光荣，更是为了追求一种境界。目标实现了，便是光荣；目标实现不了，人生也会因这一路风雨跋涉变得丰富而充实；在我看来，这就是不虚此生。</p>
+<p>​        是的，我喜欢出发，愿你也喜欢。</p>
+</blockquote>
+<p>最后结个尾</p>
+<p>People come and go, we struggled with laughter and tears, and all the years have gone by,still I have you by my side.</p>
+<p> 你陪了我多少年</p>
+<p>穿林打叶 过程轰轰烈烈</p>
+<p>花开花落 一路上起起跌跌</p>
+<p>（希望江南老贼给我的明非一个happy ending，才不枉我从初中等到大学）</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>语录</title>
+    <url>/2021/09/03/%E8%AF%AD%E5%BD%95/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<p><a href="https://www.mingyantong.com/ju/207365">人活在世上永远如临深渊,其实这世上从来就没有回头二字,最多也只是重新开始。</a></p>
+<p><a href="https://www.mingyantong.com/ju/247968">“活着”的概念不是等着慢慢死去，而是要不断地奔跑，跑到很远的地方去看尽可能广大的世界，跑到筋疲力尽才不会后悔。</a></p>
+<p><a href="https://www.mingyantong.com/ju/259850">这个世界有多大，取决于你认识的人，你每认识一个人，世界对你来说就会变大一些</a></p>
+<p><a href="https://www.mingyantong.com/ju/374571">当谎言重复一千遍的时候，你就会相信它，只要那个谎言足够美好。</a></p>
+<p><a href="https://www.mingyantong.com/ju/200274">命运这种东西，生来就是要被踏于足下的</a></p>
+<p><a href="https://www.mingyantong.com/ju/372548">不要做会让自己后悔的事，不要让那些爱你的人难过，因为这个世界上，你爱的人固然很少，爱你的人也绝不多。</a></p>
+<p><a href="https://www.mingyantong.com/ju/198804">愿你我江湖永别后会无期，道别的话多说无益，祝你无边落木萧萧下、西出阳关无故人、雨淋白骨血染草、月冷黄沙鬼守尸。</a></p>
+<p>人长大了，总要和这个世界和解。</p>
+<p>这世上要是没有了惹祸精，负责善后的人也会很孤独。</p>
+<p><a href="https://www.mingyantong.com/ju/938750">废柴也是木头!只要能烧!</a></p>
+<p><a href="https://www.mingyantong.com/ju/198844">穿越最深的地狱，而后直达天堂！</a></p>
+<p><a href="https://www.mingyantong.com/ju/489303">每个人都有几个损友，约你见面老是在那种卫生条件很可疑的地方，喝着廉价的啤酒， 吃着烂糟糟的海鲜。可你还是犯贱地穿着你的阿玛尼定制西装去了，跟他对喷唾沫，而且乐此不疲。</a></p>
+<p><a href="https://www.mingyantong.com/ju/312570">你在长大的同时， 某个人也在离开你。</a></p>
+<p><a href="https://www.mingyantong.com/ju/377896">建立一份仇恨只需一瞬间，建立一份爱却要很多年。</a></p>
+<p><a href="https://www.mingyantong.com/ju/720518">没人会记得死了的东西，没人记得的东西就跟死了一样。</a></p>
+<p><a href="https://www.mingyantong.com/ju/587765">人的记忆很靠不住，就像一块容易被消磁的破硬盘。过去的事情就像是画在沙地上的画，时间流逝，记忆模糊，最后化成白茫茫一片，再也无法分辨。</a></p>
+<p><a href="https://www.mingyantong.com/ju/691694">像烟花也是过一生，像樱花也是过一生，只要亮过和盛开过不就好了吗？</a></p>
+<p><a href="https://www.mingyantong.com/ju/1100633">从相遇的刹那开始，离别也已经开始。</a></p>
+<p><a href="https://www.mingyantong.com/ju/718143">你陪了我多少年，一路上花开花落，起起跌跌。<br> All the years have gone by ,only you still by my side.</a></p>
+<p><a href="https://www.mingyantong.com/ju/938050">你陪了我多少年，花开花谢，一路上起起跌跌。春夏秋冬泯和灭，幕还未谢。</a></p>
+<p><a href="https://www.mingyantong.com/ju/1237494">有些人认识了很久，也未必很熟，有些人看到对方的第一眼，就会觉得很亲近。</a></p>
+<p><a href="https://www.mingyantong.com/ju/377891">想把每个人留在最初相遇的样子，可是会变的，大家都走了，只留下他一个人在原地。</a></p>
+<p><a href="https://www.mingyantong.com/ju/495486">人需要多大的勇气才能从天堂般的幸福感中挣脱出来。</a></p>
+<p><a href="https://www.mingyantong.com/ju/281828">古人说什么来着，“天地一逆旅”，每个人的一辈子都在跟死神比赛跑，它想抓住你，你想跑得更远看更美的世界。虽然你明知道还是会被它抓住，可只要还有一口气你就会玩命地跑。</a></p>
+<p><a href="https://www.mingyantong.com/ju/1585688">这世界总是这么可笑对不对？总是一个人很想说话，另一个人不想听。</a></p>
+<p><a href="https://www.mingyantong.com/ju/428584">虽然不知道世界有多大，可还是固执地想到外面去。</a></p>
+<p><a href="https://www.mingyantong.com/ju/495494">常常都是这样，最爱你的人，他为你做了很多事，可你不知道。因为他觉得做这些都 是应该的，就忘记跟你说了。</a></p>
+<p><a href="https://www.mingyantong.com/ju/537764">每一次离别都是为了更好的归来</a></p>
+<p><a href="https://www.mingyantong.com/ju/889603">Something for nothing。 （拿什么珍贵的东西换回了空白）lonely kids hides in heart(每一个人心里都藏有一个孤独的孩子)</a></p>
+<p><a href="https://www.mingyantong.com/ju/198812">布加迪威龙是世界上最快量产跑车，可它跑不过时光，也跑不过早已注定的命运。</a></p>
+<p><a href="https://www.mingyantong.com/ju/593069">我们都是小怪兽，终有一天会被正义的奥特曼杀死。</a></p>
+<p><a href="https://www.mingyantong.com/ju/589643">“我告诉你啊，这世界可好玩了，还有很多你没有见过也没有经历过的事情。”</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>计组1</title>
+    <url>/2022/07/11/%E8%AE%A1%E7%BB%841/</url>
+    <content><![CDATA[<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113102950363.png" alt="image-20220113102950363"></p>
+<h1 id="1-绪论"><a href="#1-绪论" class="headerlink" title="1.绪论"></a><strong>1.绪论</strong></h1><p>摩尔定律</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220112213809068.png" alt="image-20220112213809068"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220112213912423.png" alt="image-20220112213912423"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113101336106.png" alt="image-20220113101336106"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113101404815.png" alt="image-20220113101404815"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113102848882.png" alt="image-20220113102848882"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113103039946.png" alt="image-20220113103039946"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113103136291.png" alt="image-20220113103136291"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113103151514.png" alt="image-20220113103151514"></p>
+<p>IPS指令每秒的实现量</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113103214903.png" alt="image-20220113103214903"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104057582.png" alt="image-20220113104057582"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104123158.png" alt="image-20220113104123158"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104135830.png" alt="image-20220113104135830"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104439341.png" alt="image-20220113104439341"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104534484.png" alt="image-20220113104534484"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104537804.png" alt="image-20220113104537804"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113104549692.png" alt="image-20220113104549692"></p>
+<p>IPS是每秒执行多少条指令</p>
+<p>CPI是平均一个指令需要的时钟周期<img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220113232155117.png" alt="image-20220113232155117"></p>
+<h1 id="2-计算机中的数据表示"><a href="#2-计算机中的数据表示" class="headerlink" title="2.计算机中的数据表示"></a><strong>2.计算机中的数据表示</strong></h1><h2 id="原码-反码-补码的基础概念和计算方法"><a href="#原码-反码-补码的基础概念和计算方法" class="headerlink" title="原码, 反码, 补码的基础概念和计算方法."></a>原码, 反码, 补码的基础概念和计算方法.</h2><p>在探求为何机器要使用补码之前, 让我们先了解原码, 反码和补码的概念.对于一个数, 计算机要使用一定的编码方式进行存储. 原码, 反码, 补码是机器存储一个具体数字的编码方式.</p>
+<h3 id="1-原码"><a href="#1-原码" class="headerlink" title="1. 原码"></a>1. 原码</h3><p>原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值. 比如如果是8位二进制:</p>
+<blockquote>
+<p>[+1]原 = 0000 0001</p>
+<p>[-1]原 = 1000 0001</p>
+</blockquote>
+<p>第一位是符号位. 因为第一位是符号位, 所以8位二进制数的取值范围就是:</p>
+<blockquote>
+<p>[1111 1111 , 0111 1111]</p>
+</blockquote>
+<p>即</p>
+<blockquote>
+<p>[-127 , 127]</p>
+</blockquote>
+<p>原码是人脑最容易理解和计算的表示方式.</p>
+<h3 id="2-反码"><a href="#2-反码" class="headerlink" title="2. 反码"></a>2. 反码</h3><p>反码的表示方法是:</p>
+<p>正数的反码是其本身</p>
+<p>负数的反码是在其原码的基础上, 符号位不变，其余各个位取反.</p>
+<blockquote>
+<p>[+1] = [00000001]原 = [00000001]反</p>
+<p>[-1] = [10000001]原 = [11111110]反</p>
+</blockquote>
+<p>可见如果一个反码表示的是负数, 人脑无法直观的看出来它的数值. 通常要将其转换成原码再计算.</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616171359711.png" alt="image-20220616171359711"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616171419016.png" alt="image-20220616171419016"></p>
+<h3 id="3-补码"><a href="#3-补码" class="headerlink" title="3. 补码"></a>3. 补码</h3><p>补码的表示方法是:</p>
+<p>正数的补码就是其本身</p>
+<p>负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1. (即在反码的基础上+1)</p>
+<blockquote>
+<p>[+1] = [00000001]原 = [00000001]反 = [00000001]补</p>
+<p>[-1] = [10000001]原 = [11111110]反 = [11111111]补</p>
+</blockquote>
+<p>对于负数, 补码表示方式也是人脑无法直观看出其数值的. 通常也需要转换成原码在计算其数值.</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616171438350.png" alt="image-20220616171438350"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616171542760.png" alt="image-20220616171542760"></p>
+<h3 id="4-移码"><a href="#4-移码" class="headerlink" title="4.移码"></a>4.移码</h3><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616165932830.png" alt="image-20220616165932830"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616165655025.png" alt="image-20220616165655025"></p>
+<p>求补运算</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616165749379.png" alt="image-20220616165749379"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616165820459.png" alt="image-20220616165820459"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616170125663.png" alt="image-20220616170125663"></p>
+<p>浮点数的表示</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616175216787.png" alt="image-20220616175216787"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220624040949091.png" alt="image-20220624040949091"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220624041331903.png" alt="image-20220624041331903"></p>
+<p><strong>IEEE754</strong></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616175056978.png" alt="image-20220616175056978"></p>
+<p>阶码=移码-偏移量</p>
+<p>移码=阶码真值-偏移量（7个1，127）</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616180201869.png" alt="image-20220616180201869"></p>
+<p>奇偶校验</p>
+<p>海明码</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616181905518.png" alt="image-20220616181905518"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616181934446.png" alt="image-20220616181934446"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220616182152360.png" alt="image-20220616182152360"></p>
+<p>CRC码</p>
+<h1 id="3-运算方法与运算器"><a href="#3-运算方法与运算器" class="headerlink" title="3.运算方法与运算器"></a><strong>3.运算方法与运算器</strong></h1><p>加减法</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001120999.png" alt="image-20220617001120999"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001158809.png" alt="image-20220617001158809"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001225234.png" alt="image-20220617001225234"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001324035.png" alt="image-20220617001324035"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001343316.png" alt="image-20220617001343316"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001400715.png" alt="image-20220617001400715"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001412108.png" alt="image-20220617001412108"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617001458779.png" alt="image-20220617001458779"></p>
+<p>加法器。。。。没看</p>
+<p>移码的加减</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617002620273.png" alt="image-20220617002620273"></p>
+<p>BCD码</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617003743505.png" alt="image-20220617003743505"></p>
+<p>乘法</p>
+<p>原码一位乘</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617143647092.png" alt="image-20220617143647092"></p>
+<p>补码一位乘法    布斯booth 法</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617143820120.png" alt="image-20220617143820120"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617143805550.png" alt="image-20220617143805550"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617143847242.png" alt="image-20220617143847242"></p>
+<p>除法</p>
+<p>原码除法  恢复余数法</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617144654692.png" alt="image-20220617144654692"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617144753736.png" alt="image-20220617144753736"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617163748156.png" alt="image-20220617163748156"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617192943121.png" alt="image-20220617192943121"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617193819181.png" alt="image-20220617193819181"></p>
+<p>原码加减交替法</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617193211754.png" alt="image-20220617193211754"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617193848854.png" alt="image-20220617193848854"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617194642849.png" alt="image-20220617194642849"></p>
+<p>浮点数运算‘</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617234859772.png" alt="image-20220617234859772"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617234916779.png" alt="image-20220617234916779"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617235926843.png" alt="image-20220617235926843"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617235938594.png" alt="image-20220617235938594"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617235912957.png" alt="image-20220617235912957"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220617235957170.png" alt="image-20220617235957170"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220618000006995.png" alt="image-20220618000006995"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220618000017825.png" alt="image-20220618000017825"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220618000711660.png" alt="image-20220618000711660"></p>
+<h1 id="4-指令"><a href="#4-指令" class="headerlink" title="4.指令"></a><strong>4.指令</strong></h1><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015120097.png" alt="image-20220623015120097"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015131592.png" alt="image-20220623015131592"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015148380.png" alt="image-20220623015148380"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015204189.png" alt="image-20220623015204189"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015218121.png" alt="image-20220623015218121"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015315273.png" alt="image-20220623015315273"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015338999.png" alt="image-20220623015338999"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015404619.png" alt="image-20220623015404619"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015528389.png" alt="image-20220623015528389"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015549927.png" alt="image-20220623015549927"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015613653.png" alt="image-20220623015613653"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015626839.png" alt="image-20220623015626839"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015700732.png" alt="image-20220623015700732"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015738810.png" alt="image-20220623015738810"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015757005.png" alt="image-20220623015757005"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015806917.png" alt="image-20220623015806917"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015822261.png" alt="image-20220623015822261"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015835075.png" alt="image-20220623015835075"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015857472.png" alt="image-20220623015857472"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015907167.png" alt="image-20220623015907167"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623012843083.png" alt="image-20220623012843083"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623012831378.png" alt="image-20220623012831378"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623013409411.png" alt="image-20220623013409411"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623013630710.png" alt="image-20220623013630710"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623013647975.png" alt="image-20220623013647975"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623013837128.png" alt="image-20220623013837128"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623013853041.png" alt="image-20220623013853041"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623013914331.png" alt="image-20220623013914331"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014451199.png" alt="image-20220623014451199"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014758305.png" alt="image-20220623014758305"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014612092.png" alt="image-20220623014612092"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014811271.png" alt="image-20220623014811271"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014857846.png" alt="image-20220623014857846"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623015035306.png" alt="image-20220623015035306"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623020117309.png" alt="image-20220623020117309"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623020218658.png" alt="image-20220623020218658"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623020243135.png" alt="image-20220623020243135"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014025247.png" alt="image-20220623014025247"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014043758.png" alt="image-20220623014043758"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014103888.png" alt="image-20220623014103888"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623014116985.png" alt="image-20220623014116985"></p>
+<h1 id="5-存储系统"><a href="#5-存储系统" class="headerlink" title="5.存储系统"></a><strong>5.存储系统</strong></h1><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622224753858.png" alt="image-20220622224753858"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622224828761.png" alt="image-20220622224828761"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622224850616.png" alt="image-20220622224850616"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622224918911.png" alt="image-20220622224918911"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622224931272.png" alt="image-20220622224931272"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622225034555.png" alt="image-20220622225034555"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622230744597.png" alt="image-20220622230744597"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622230755834.png" alt="image-20220622230755834"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220622230839873.png" alt="image-20220622230839873"></p>
+<h1 id="6-处理器（CPU）设计"><a href="#6-处理器（CPU）设计" class="headerlink" title="6.处理器（CPU）设计"></a><strong>6.处理器（CPU）设计</strong></h1><p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021718516.png" alt="image-20220623021718516"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021739261.png" alt="image-20220623021739261"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021659425.png" alt="image-20220623021659425"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021756839.png" alt="image-20220623021756839"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021804896.png" alt="image-20220623021804896"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021931543.png" alt="image-20220623021931543"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623021952984.png" alt="image-20220623021952984"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022010487.png" alt="image-20220623022010487"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022101800.png" alt="image-20220623022101800"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022114440.png" alt="image-20220623022114440"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022211696.png" alt="image-20220623022211696"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022224624.png" alt="image-20220623022224624"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022237599.png" alt="image-20220623022237599"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022249230.png" alt="image-20220623022249230"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022553973.png" alt="image-20220623022553973"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022639287.png" alt="image-20220623022639287"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022906607.png" alt="image-20220623022906607"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022950768.png" alt="image-20220623022950768"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623022959921.png" alt="image-20220623022959921"></p>
+<p>w信号——节拍信号   P 信号——触发信号</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023321461.png" alt="image-20220623023321461"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023348891.png" alt="image-20220623023348891"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023444832.png" alt="image-20220623023444832"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023458426.png" alt="image-20220623023458426"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023526721.png" alt="image-20220623023526721"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023539375.png" alt="image-20220623023539375"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023650313.png" alt="image-20220623023650313"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023707495.png" alt="image-20220623023707495"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023848617.png" alt="image-20220623023848617"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623023910926.png" alt="image-20220623023910926"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024030598.png" alt="image-20220623024030598"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024200984.png" alt="image-20220623024200984"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024214624.png" alt="image-20220623024214624"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024245839.png" alt="image-20220623024245839"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024316000.png" alt="image-20220623024316000"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024348353.png" alt="image-20220623024348353"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024600606.png" alt="image-20220623024600606"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024618800.png" alt="image-20220623024618800"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024654775.png" alt="image-20220623024654775"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024815114.png" alt="image-20220623024815114"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024828665.png" alt="image-20220623024828665"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024839144.png" alt="image-20220623024839144"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623024900666.png" alt="image-20220623024900666"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025300823.png" alt="image-20220623025300823"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025531376.png" alt="image-20220623025531376"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025549376.png" alt="image-20220623025549376"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025620214.png" alt="image-20220623025620214"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025644502.png" alt="image-20220623025644502"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025800342.png" alt="image-20220623025800342"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025830616.png" alt="image-20220623025830616"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025855135.png" alt="image-20220623025855135"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025937214.png" alt="image-20220623025937214"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623025957254.png" alt="image-20220623025957254"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030051984.png" alt="image-20220623030051984"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030105360.png" alt="image-20220623030105360"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030132208.png" alt="image-20220623030132208"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030152181.png" alt="image-20220623030152181"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030217189.png" alt="image-20220623030217189"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030233023.png" alt="image-20220623030233023"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030301856.png" alt="image-20220623030301856"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030321855.png" alt="image-20220623030321855"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030340903.png" alt="image-20220623030340903"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030407856.png" alt="image-20220623030407856"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030426959.png" alt="image-20220623030426959"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030453144.png" alt="image-20220623030453144"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030509863.png" alt="image-20220623030509863"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030528626.png" alt="image-20220623030528626"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030705107.png" alt="image-20220623030705107"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030811716.png" alt="image-20220623030811716"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030837558.png" alt="image-20220623030837558"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030932055.png" alt="image-20220623030932055"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623030946320.png" alt="image-20220623030946320"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623031021294.png" alt="image-20220623031021294"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623031033329.png" alt="image-20220623031033329"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151220419.png" alt="image-20220623151220419"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151353373.png" alt="image-20220623151353373"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151417074.png" alt="image-20220623151417074"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151436988.png" alt="image-20220623151436988"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151525604.png" alt="image-20220623151525604"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151539742.png" alt="image-20220623151539742"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151712754.png" alt="image-20220623151712754"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151857997.png" alt="image-20220623151857997"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623151920293.png" alt="image-20220623151920293"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152050971.png" alt="image-20220623152050971"></p>
+<p>块数×（区号位数＋块号位数）</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152318403.png" alt="image-20220623152318403"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152336658.png" alt="image-20220623152336658"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152354594.png" alt="image-20220623152354594"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152504132.png" alt="image-20220623152504132"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152550614.png" alt="image-20220623152550614"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623152938928.png" alt="image-20220623152938928"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153004106.png" alt="image-20220623153004106"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153016108.png" alt="image-20220623153016108"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153134886.png" alt="image-20220623153134886"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153203010.png" alt="image-20220623153203010"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153236891.png" alt="image-20220623153236891"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153307980.png" alt="image-20220623153307980"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153351084.png" alt="image-20220623153351084"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153433843.png" alt="image-20220623153433843"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153613253.png" alt="image-20220623153613253"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153634787.png" alt="image-20220623153634787"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153833083.png" alt="image-20220623153833083"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623153854819.png" alt="image-20220623153854819"></p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20220623154155803.png" alt="image-20220623154155803"></p>
+]]></content>
+  </entry>
 </search>
